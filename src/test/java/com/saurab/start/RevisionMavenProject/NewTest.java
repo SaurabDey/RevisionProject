@@ -63,7 +63,10 @@ public class NewTest {
 	@AfterTest
 	public void afterTest() {
 		driver.quit();
-
+		System.out.println("Ended");
+		System.out.println("Ended");
+		System.out.println("Ended");
+		System.out.println("Ended");
 	}
 
 }
