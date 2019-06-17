@@ -33,7 +33,7 @@ public class NewTest {
 	@Parameters("myBrowser")
 	@BeforeTest
 	public void beforeTest(String valueXyz) {
-
+    System.out.println("hello, i am friend");
 		String browser= valueXyz;
 		
 		if (browser.equals("chrome")) {
