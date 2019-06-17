@@ -25,7 +25,7 @@ public class NewTest {
 		;
 		WebElement password = driver.findElement(By.name("pwd"));
 		password.sendKeys("demo123");
-		;
+		
 		WebElement button = driver.findElement(By.xpath("//input[@type='submit']"));
 		button.click();
 	}
