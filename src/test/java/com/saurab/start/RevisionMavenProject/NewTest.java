@@ -65,7 +65,8 @@ public class NewTest {
 		driver.quit();
 		System.out.println("Ended");
 		System.out.println("Ended");
-
+		System.out.println("Ended");
+		System.out.println("Ended");
 	}
 
 }
