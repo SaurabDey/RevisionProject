@@ -22,18 +22,19 @@ public class NewTest {
 	public void f() {
 		WebElement username = driver.findElement(By.id("user_login"));
 		username.sendKeys("admin");
-		;
+		
 		WebElement password = driver.findElement(By.name("pwd"));
 		password.sendKeys("demo123");
-		;
+		
 		WebElement button = driver.findElement(By.xpath("//input[@type='submit']"));
 		button.click();
+		System.out.println("snehal");
 	}
 
 	@Parameters("myBrowser")
 	@BeforeTest
 	public void beforeTest(String valueXyz) {
-
+    System.out.println("hello, i am friend");
 		String browser= valueXyz;
 		
 		if (browser.equals("chrome")) {
@@ -66,7 +67,8 @@ public class NewTest {
 		driver.quit();
 		System.out.println("Ended");
 		System.out.println("Ended");
-
+		System.out.println("Ended");
+		System.out.println("Ended");
 	}
 
 }
