@@ -28,6 +28,7 @@ public class NewTest {
 		
 		WebElement button = driver.findElement(By.xpath("//input[@type='submit']"));
 		button.click();
+		System.out.println("snehal");
 	}
 
 	@Parameters("myBrowser")
