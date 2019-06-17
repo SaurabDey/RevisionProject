@@ -22,10 +22,10 @@ public class NewTest {
 	public void f() {
 		WebElement username = driver.findElement(By.id("user_login"));
 		username.sendKeys("admin");
-		;
+		
 		WebElement password = driver.findElement(By.name("pwd"));
 		password.sendKeys("demo123");
-		;
+		
 		WebElement button = driver.findElement(By.xpath("//input[@type='submit']"));
 		button.click();
 	}
