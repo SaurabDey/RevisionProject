@@ -4,6 +4,8 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -12,6 +14,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.AfterTest;
 
@@ -20,39 +24,28 @@ public class NewTest {
 
 	@Test
 	public void f() {
-		WebElement username = driver.findElement(By.id("user_login"));
-		username.sendKeys("admin");
-		;
-		WebElement password = driver.findElement(By.name("pwd"));
-		password.sendKeys("demo123");
-		;
-		WebElement button = driver.findElement(By.xpath("//input[@type='submit']"));
-		button.click();
+		
+		
+		LoginClass log = new LoginClass(driver);
+		log.loginmethod();
+		
+		Post po = new Post(driver);
+		po.postmethod();
+		
 	}
 
 	@Parameters("myBrowser")
 	@BeforeTest
-	public void beforeTest(String valueXyz) {
+	public void beforeTest(String valueXyz) throws MalformedURLException {
 
 		String browser= valueXyz;
 		
-		if (browser.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "Resource/chromedriver.exe");
-			driver = new ChromeDriver();
-		} 
-		else if(browser.equals("firefox"))
-		{
-			System.setProperty("webdriver.gecko.driver", "Resource/geckodriver.exe");
-			driver = new FirefoxDriver();
-		}
-		else if(browser.equals("ie"))
-		{
-			System.setProperty("webdriver.ie.driver", "Resource/IEDriverServer.exe");
-			driver = new InternetExplorerDriver();
-		}
-		else {
-			throw new RuntimeException("Browser is not available");
-		}
+		System.setProperty("webdriver.chrome.driver", "Resource/chromedriver.exe");
+		driver= new ChromeDriver();
+		
+		/*DesiredCapabilities capabilities= new DesiredCapabilities();
+		capabilities.setCapability("browserName", browser);
+		driver= new RemoteWebDriver(new URL("http://192.168.0.3:4444/wd/hub"), capabilities);*/
 		
 
 		driver.get("http://demosite.center/wordpress/wp-login.php?");
