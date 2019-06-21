@@ -24,8 +24,7 @@ public class NewTest {
 
 	@Test
 	public void f() {
-		
-		
+	
 		LoginClass log = new LoginClass(driver);
 		log.loginmethod();
 		
@@ -55,10 +54,8 @@ public class NewTest {
 
 	@AfterTest
 	public void afterTest() {
+		System.out.println("Dyanesh");
 		driver.quit();
-		System.out.println("Ended");
-		System.out.println("Ended");
-		System.out.println("Ended");
 		System.out.println("Ended");
 	}
 
