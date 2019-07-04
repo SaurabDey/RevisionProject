@@ -7,16 +7,4 @@
 			<class name="com.saurab.start.RevisionMavenProject.NewTest" />
 		</classes>
 	</test> <!-- Test -->
-	<test name="Test2">
-		<parameter name="myBrowser" value="firefox"></parameter>
-		<classes>
-			<class name="com.saurab.start.RevisionMavenProject.NewTest" />
-		</classes>
-	</test> <!-- Test -->
-	<test name="Test3">
-		<parameter name="myBrowser" value="ie"></parameter>
-		<classes>
-			<class name="com.saurab.start.RevisionMavenProject.NewTest" />
-		</classes>
-	</test> <!-- Test -->
 </suite> <!-- Suite -->
